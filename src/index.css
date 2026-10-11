@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-ice: #E8F0F7;
+    --surface-light: #F5F9FC;
+    --ink-primary: #071A30;
+    --ink-soft: #13243D;
+    --text-muted: #56637C;
+    --text-muted2: #4A5873;
+    --cta-bg: #0D2240;
+    --whatsapp-green: #25D366;
+    --pill-circle-sec: #1A3354;
+    --foam-blue: #2E7BD6;
+    --accent-light: #8DBEF0;
+    --track-line: #D8E3EF;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-ice);
+    color: var(--ink-primary);
+    overflow-x: hidden;
+  }
+
+  /* Focus ring standard */
+  :focus-visible {
+    outline: 2px solid #2E7BD6;
+    outline-offset: 2px;
+  }
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: inset 1px 1px 0 0 rgba(255, 255, 255, 0.8), 0 20px 40px -15px rgba(7, 26, 48, 0.06);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: inset 1px 1px 0 0 rgba(255, 255, 255, 0.8), 0 10px 25px -10px rgba(7, 26, 48, 0.04);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: inset 1px 1px 0 0 rgba(255, 255, 255, 0.9), 0 8px 30px -8px rgba(7, 26, 48, 0.07);
+}
+
+/* Hero background slow zoom */
+@keyframes heroZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.04);
+  }
+}
+
+.animate-hero-bg {
+  animation: heroZoom 20s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+/* Floating bubbles */
+@keyframes floatBubble1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(14px, -24px) scale(1.08);
+  }
+}
+
+@keyframes floatBubble2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-18px, -30px) scale(0.92);
+  }
+}
+
+@keyframes floatBubble3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(10px, -18px) scale(1.05);
+  }
+}
+
+.animate-bubble-1 {
+  animation: floatBubble1 14s ease-in-out infinite;
+}
+
+.animate-bubble-2 {
+  animation: floatBubble2 18s ease-in-out infinite;
+}
+
+.animate-bubble-3 {
+  animation: floatBubble3 12s ease-in-out infinite;
+}
+
+/* Slow pulse */
+@keyframes slowPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.2);
+  }
+}
+
+.animate-slow-pulse {
+  animation: slowPulse 2.8s ease-in-out infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-hero-bg,
+  .animate-bubble-1,
+  .animate-bubble-2,
+  .animate-bubble-3,
+  .animate-slow-pulse {
+    animation: none !important;
+    transform: none !important;
+  }
+}

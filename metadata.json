@@ -1,0 +1,8 @@
+{
+  "name": "Lavado de Alfombras Chile",
+  "description": "Servicio de lavado y limpieza de alfombras a domicilio en Santiago, Rancagua y Machalí. Muro a muro y alfombras sueltas con retiro y entrega.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
